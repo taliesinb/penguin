@@ -1124,7 +1124,8 @@ window_image::window_image(std::string file, display_method m)
 : image(0), method(m)
 {
   PALETTE pal;
-  image = load_bitmap(file.c_str(), pal);
+  image = load_bmp(file.c_str(), pal);
+    ASSERT(image);
 }
 
 window_image::window_image(BITMAP* bmp, display_method m)

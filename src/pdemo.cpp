@@ -162,7 +162,7 @@ class paint_class : public window_main
         listen(radio_colour[i], VOID_LISTENER(paint_class::select_colour, activate_ei));
       
       // Load the little 'hand' image and hide it
-      marker.load("mouse/hand.bmp");
+      marker.load("/users/Tali/Checkout/penguin/images/hand.bmp");
       marker.hide();
     }     
     
@@ -503,7 +503,7 @@ class widget_class : public window_main
       block(200,20,100),
       label("Label"),
       textbox("Textbox..."),
-      image("images/winamp.bmp"),
+      image("/users/Tali/Checkout/penguin/images/winamp.bmp"),
       frame_text("Frame", false, ft_none),
       lframe("Label-frame"),
       checkbox("Checkbox"),
@@ -511,7 +511,7 @@ class widget_class : public window_main
       radio2("Radiobutton B"),
       multilabel("Label with:\n- Multiple Lines\n- Word wrapping", true),
       scroll(hv_horizontal),
-      pane_image("images/farms.jpg"),
+      pane_image("/users/Tali/Checkout/penguin/images/farms.bmp"),
       pane(pane_image),
       multitext("Multiple lines\nWord-wrapping\n.\n.\n.\n.\n.\n.\n.\n.\n.\nScrollable Textbox", true)
       
@@ -685,8 +685,8 @@ class desktop_class : public window_block
     
     desktop_class() 
     : window_block(100,100,128),
-      wallpaper("images/penguin.bmp"),
-      masked_window("images/girl.bmp"),
+      wallpaper("/users/Tali/Checkout/penguin/images/penguin.bmp"),
+      masked_window("/users/Tali/Checkout/penguin/images/girl.bmp"),
       
       paint_button("Paint Window"),
       mag_button("Magnifier"),
