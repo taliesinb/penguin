@@ -1,0 +1,876 @@
+[IDEAS]
+
+QUESTION: Why is 'connect' only allowed during loading?
+QUESTION: Can widgets function at file-level rather than in classes?
+
+POT ERROR: When a radio-button is removed, the pCheckGroup might still point
+to it, so it should remove itself on being unloaded?
+
+ERROR: next-sub pointer system seems broken!
+
+Add virtual 'pDraw' object that is filled with information regarding how
+to draw the window, and is then passed to the graphics context as if it
+were a functor: grx(pgFill(4,2,4)); This would allow dither operations
+to take place like follows: grx(pgFill(4,2,4),dither);.. NAAH!
+
+Add another zone-list to all windows, which stores the zones on the window
+that have to be redrawn due to a 'daz'. These are then redrawn on the next
+display! When a display command is issued, the daz-list is cleared. Therefore,
+when the display is actually carried out, if the daz-list contains any zones,
+these will be drawn, if not, the entire window is drawn.
+
+Possibility of allowing windows to be defined pre-allegro, thus permitting
+a global as well as a classed way of building GUIs?
+
+Make window-manager emit functions such as 'clicked', 'key-pressed', and all
+other user-events when they happen, but have the origin set to the actual
+window to which the event happened. This allows a window to receive events
+about other windows through a single interface.
+
+Layout technique or whatever: system for dialogue windows with 'next' and
+'prev' connections, and ability to define tree-ish layout behaviour, so
+multiple branches can be built. 
+
+Be able to link data items to items in a table. Perhaps 'transmit' in event-knot
+is a virtual function, allowing for wierder event-knots to be created. Create
+'managed' input widgets, that apply a criteria in order to detect whether given
+input is invalid. Verification routine returns string representing error that
+should be given, with a null string string representing no error, and also the
+ability to change the text/value in the widget.
+
+Create virtual 'add_child' function, so that window_pane will add its children
+to the back. Also, allow many children in 'window_pane', and allow a layout
+manager to be set for it!
+
+Add 'corner_block' as part of scrollbar, cutting down on 100 bytes. Arrange
+scrollbars, and content according to compass-layout? 
+
+Possibility that the manager being destroyed would throw an exception, allowing
+the process_mouse/process_keyboard function to be completely skipped.
+
+Rename 'kb_event' to 'key_event'!
+
+Create 'tree_activity' event, as well as a 'clicked elsewhere' event.
+
+Provide re-entrancy protection for individual base_window functions through
+flags for each function, that are set on entry and reset on exit, and which
+invalidate a call if already set.
+
+Add 'append' function to textbox, as well as 'insert', which inserts text
+where the cursor currently is!
+
+Make normal width and height of a pane equal to the width and height of its
+contained item plus.
+
+'Share' option in flow-layout: windows are 'justified' to equally share all of
+the extra available space on each line! There should be a 'flow-info' type as
+well! They could either expand to fill it (if they had they 'expand_width' thing
+on), or just let it create a gap. Flows could be row-major, or column-major, and
+be left, right or centre justified. 
+
+Right-click menu for my textbox, contains an 'advanced' sub-menu, with 'increment',
+'get file', 'save to windows clipboard', 'load from windows clipboard', etc.
+
+Determine overdraw ratio using amount of time for a full redraw of something
+complex like a tree, versus time for a 1/5 of that area, and see if it approaches
+.2!
+
+Merge check-box and radiobutton? They're the same, basically. Also, use groups,
+for gods sake!
+
+Haven't accounted for 'int_input_ei' and 'string_input_ei' that should be emitted
+when properties change for widgets like labels, etc.
+
+Ability to add items to a listbox but assign them their index too. This allows
+any type of enum deal to go "add_item("Frog", frog_value);" etc...
+
+Make sure a null-length lframe looks like a frame
+
+Poll option where function returns 'false' until it wants the poll to be removed,
+and is also passed the number of frames it has been called. Perfect for co-ordinating
+window-slides, etc.
+
+Autosize for labels, etc! Normal_w, normal_h making use of label's real width
+and height, etc!
+
+Turn window into bidirectional iterator? This would allow 'for_each', etc to
+be applied to siblings. Very cool!
+
+Add potential for hooks in display context, so that it can be used to automatically
+redisplay a window after being drawn to using a display context. Alternatively,
+create descendant of 'display context' that automatically updates the window 
+when destroyed. This solves the problem of self-triggering: it is initiailized
+by value from the basic 'display context' type!
+
+Conservation for grid layout: maximum preferred width and height are selected
+of all contained windows, and this is times'd by number of cells.
+
+Expand_h for flow-layout makes any components use a maximum height to the 
+bottom of the container.
+
+Get rid of constant-correctness.
+
+Scrollbars that dissappear when their max is less than their page?
+
+Have an 'inserts' property for all layout managers, defining the 'border' that
+the algorithm will have to work within.
+
+Make text-box behave as an iostream. It can send and receive text, and will
+usually append text to the end of itself. Do the same thing for labels, etc!!!
+
+Think of way to not enter missing wierd characters!
+
+For case where the clipping routine can only 'turn off all drawing' by setting
+some bogus clipping rectangle, make sure that all Penguin bitmaps have a 1-pixel
+grace-area on the side, to allow the clipping routines to safely set the clipping
+rectangle to a 1x1 pixel area that is invisible.
+
+Create 'action' class that can specify an icon, text, a tooltip, and an 
+event_knot. It can be bound to buttons, placed in menu-bars (using the icon
+and text, and resulting in the description being relayed to any status-bar at
+the bottom of the window), but in a dynamic toolbar, put in a popup. Etc...
+
+Make text-render functions have an ellipses when the text can't fit!
+
+Create 'bounded range' class that can be attached to a slider, progress bar,
+spinbox, listbox, etc. Any interaction with it will result in it emitted events
+that potentially will be picked up by any progress bars, etc.
+
+Look into Swing, seriously! Might cool stuff in there! 
+
+Build in the 'move_resize' recalculations for subliminal windows straight into
+the base-window move function. 
+
+Allow a parent window to set a cursor that over-rides the child cursor!
+
+Come up with 'offsets' for mouse cursor!
+
+Don't wipe out 'click_x', 'click_y' after the mouse goes up! These could be used
+to calculate double-clicks, for instance.
+
+An 'undo list' for window_textbox hooks into 'text_changed' or something, and
+saves the state of every such change. Then, if you want to change back, it'll
+intercept CTRL-Z, and replace the text with the old text, same for cursor pos!
+
+For XOR-type overlays on the screen, use a 'primitive_list' in the master. It
+is disabled whenever drawing takes place, using the same technique as Allegro's
+mouse!
+
+Create knot that can take a pointer to a listener that doesn't have ANY arguments.
+This is simpler, in many cases!
+
+Create 'stack' layout - stacks windows up from the top or bottom or left or
+right, up to a certain point, and 'shrinks' them if the container goes below that
+point.
+
+We need to use a state-preserving algorithm for 'grx_sensitive'! Otherwise,
+on a pack, when the move_resize function unsets and then sets the 'grx_sensitive'
+flag, it will override the original insensitivity!
+
+Use bitfields in kb_event to make space usage more efficient
+
+If we have been delegated and are then removed from the tree, or deleted, 
+disaster could ensue!
+
+Come up with generic hooks such as 'tree-insert', that can recalculate sub-buffers,
+and would be used whenever a window is loaded or z-shifted, etc.
+
+Add automatic redrawing on ALT-TAB!
+
+Add 'on_show' and 'on_hide' virtual functions!
+
+Double-click event. Multicaster - receives arbitrary events from many sources and
+dispatches them through one interface.
+
+Double-clicking!
+
+Get rid of 'last_public_flag' as it introduces a security hole. Instead, use
+the flags by name in the declaration of each new bitset.
+
+We can use 'dither_pattern' to draw rectangles like the focus rectangles in
+Windoze. 
+
+Think of way of preventing mouse cursor from being drawn more than once per
+frame.
+
+Improve 'zone' code. Use STL slists, and avoid static variables 'zone::clip'
+like the plague to allow for multi-threaded operation.
+
+Master presumes memory bitmaps, manager presumes screen.
+
+Create checker for compass_orientation, etc, that returns whether something is 
+west, north_west, or south_west ('on the left'), and so on for all the other
+directions.
+
+Create a C callback possibility in event_knot to allow for C programs to interface
+with the GUI
+
+Come up with a system of iterators and automatic casting for the layout_manager class. Would return a reference to
+the current layinfo (that was dynamic_cast to ensure it was the right type), and would have an increment method that
+would return bool as long as another layout_info was waiting.
+
+Add single flag to base_window to represent whether derived windows are allowed to resize themselves on demand.
+
+Make flow-layout use compass_orientation rather than its own.
+
+How about plain 'init' which gets passed an int representing what stage its at. In addittion, each window has a return 
+value'max_stage', allowing a window to implement a custom stage to make sure it is after all its children, etc. Alternatively,
+how about a series of enum'd loading stages:
+
+Consider combining move-resize with z-shift, passing a single int to represent the change in Z. 
+
+Get rid of 'bound_coords()' or think of a better system: only private members are allowed access to variable, so bound-coords
+should use intermediaries!
+
+Add 'z_move_hook'.
+
+Possibility of an 'intelligent reference' that would register with a window on being
+created, would not be allowed to change, and would automatically become 0 when the window
+was unloaded or removed. Good one!! 
+
+POTENTIAL ERROR: What happens when a window that is actively pointed to is removed from
+the tree. Pointed to by a container as an active window, or as the keyfocus, etc... Big
+trouble!
+
+POTENTIAL ERROR: If we unload during the base-window destructor, then all the other layers
+have destructed and we can't do anything. Need a mechanism to unload before this.
+
+Come up with basic interface for a buffer that maintains the size of the window... perhaps??? 
+- CONFIGURE_CHILDREN
+- CONFIGURE_SELF
+- ALLOCATE_RESOURCES
+- PACK
+- LOAD_COLOURS
+- USE_TREE
+- FINALISE
+
+Standardise way of storing visibility to allow arbitrary applications of visiblity without affecting previous applications. This
+could then be applied to any flag and process.
+
+*** Add event dispatching to window events: moves, resizes, etc ***
+
+Think of a standard interface that allows a 'content window' to be automatically bound to a scrollbar
+
+Add 'const' modifiers wherever possible
+
+Allow for listeners on parents to 'snoop' events of children.
+
+Add virtual co-variant-returning 'get_info(base_window&)' to layout, which automatically dynamicasts the return type!
+
+Decouple 'event_master' from root of window heirarchy? Just have plain interface? Could be contained by a class to allow buffered
+windows (which have custom visual appearances, like a frame around the border, etc). Would also negate the requirement to have
+a 'youngest child' as the provider of the background! Exciting idea!
+
+- 'Tooltip' string for all widgets!
+- 'Str-Value' is a text-box's text, a normal button's title, a check-box's label, a label's text, a list-box's selection.
+- 'Float-Value' is a slider's value, a text-box's numerical value, a check-box's status (1=true, 0=false), a list-box's index,
+  a scroll-bar's position, 1 for a normal button, and 0/1 for a toggle button depending on state.
+  
+Make new widgets respond to keyboard 'space' and 'enter'.
+
+Layout-info objects:
+
+<forget it for now>
+How about, all layout-info objects should take a reference to a 'layout_spec' object, which is passed to
+'add_child' in the beginning. They should take this reference through 'set', providing a standard interface
+for setting various attributes, and also through the constructor, providing a standard interface for constructing
+a layout-info object by proxy. They should dynamic_cast<> it first, and ignore it if it is invalid!
+
+Unloading a window should terminate all knots that tie to other windows, but should not terminate knots that are
+listening to THIS window!
+
+Make 'popup' layer just under mouse, which is for things like menu popups and tooltips that have to be over everything else.
+It would automatically be destroyed when the window was unloaded, and would likewise have some system for exclusivity, and for
+storing a pointer to their true parents.
+
+Think of automatically unloading window managers on destruction.
+
+Think of ensuring that Allegro is initialized by the manager if necessarry, and that only one manager is active at a given
+time.
+
+Think of playing nice with Allegro - finding some other way to implement an event handler.
+
+TODO LIST:
+
+Use width()+1 and height()+1 where applicable! width() and height() do not represent pixel width and pixel height
+
+Allow for more information in 'event_knot', such as whether the knot should be broken when the window
+is unloaded.
+
+Create class that can be 'tied' to a particular window and would be warned of loading and unloading.
+    
+Create 'setup_penguin()' which will install allegro if needed, create a default manager, set all the
+hooks, choose a suitable resolution, and return a window-manager pointer.
+
+A slider-bar representing undo/redo levels!
+
+For windows with a sub-buffer -> a gap-list does not have to be DAZ'd. It can just
+be blitted straight to the screen from the sub_buffer! Yeah!
+
+Add 'update_coords()' to all functions that change a windows co-ords before loading.
+
+Fill in the details for 'update_estate()'. Fill in details for a function that is
+called on an event_info object that sets its custom variables. Private function
+akin to 'repack()' that is called whenever custom variables are changed.
+
+New type of exception called "can't remember"
+
+Fix window tree traversal functions!
+
+Think of masters and how they should guarentee their children are displayed before
+they get displayed initially!
+
+Allow 'y-sorting' to be turned on and off from the 'master' root
+
+FOR IDE: Right clicking on a function can ajdust its properties: const-ness,
+argument names and types, return type,and name. The names of the definition
+and decleration will be updated, along with calls to that function from anywhere
+in the project.
+
+[DONE]
+
+*** Try to return quietly instead of issuing exceptings for operations that could not be completed***
+
+*** Work on ideal width, height, etc.
+
+*** Don't need to multiply inherit from 'event_sender'. 'Event_sender' can be presented as a sub-object, as
+it does not require access to the base class (apart from 'window()'). ***
+
+Add ability to stop listening to events, removing a knot that has a particular source and destination
+and a particular model type.
+
+Allow for hardware mouse. All display commands would 'scare mouse' and all 'master_updated' would 'unscare'
+it.
+
+Make 'add_child' protected, so that inherited windows can expose it where appropriate, ie, for frames.
+Also make 'add_child' load its new child as necessarry.
+
+Create 'keys_down' int in window_manager, incremented just after every key_press, decremented just before
+every key_release, which is also passed as a flag in the kb_event object.      
+
+"Pass the buck" to a set of functions that can automatically deal with moving/dragging behaviour? They could be implemented
+as sub-objects of the window, and would just be delegated to within the event hooks. 
+
+'position_children()' setup func, which is automatically used to position children after 'pre_load'
+and is also called whenever a window is resized!! Yeah, good one.
+
+For low-level keyboard handler: when a key is released, before interrupting
+the repeater, make sure the key released matches the repeating key!
+
+Fix z-change algorithms, and allow them to be used prior to loading.
+
+Create graphics functions in base_window that automatically use surface(), and can also provide a level
+of abstraction from the graphics library in use.
+
+*** Eliminate floating point values ***
+
+List-box widget,
+text-input widget
+radio-button widget.
+
+Ability to place window 'up against the side of' its parent with a single call and no fiddling.
+
+// OLD CODE:
+
+void base_window::z_shift(int z)
+{
+  if (z == 0 || !parent) return; // If there's no sibling list or work to do
+  
+  /* 'before' stores the window that we will eventually be inserted behind, 
+     'after' stores the window that we will be inserted after, and 'under' is
+     our current parent (this won't be changed, its just stored temporarily). */
+  base_window* before = next, *after = prev, *under = parent;  
+                            
+  /* This is used to determine the point from which we will display backwards,
+     when being shifted by a negative amount. */
+  base_window* last = prev; 
+  
+  // Our clipped visible area, if any.
+  zone* this_win = d_clipped(); 
+  
+  manager->set_tree_altered();
+  
+  extract(); // Remove ourselves from the tree, nulling all pointers
+
+  if (z > 0) // We are going forwards?
+  {    
+  /* This loop goes forwards, counting the number of steps taken. It will stop
+     when 'z' is reached, or when we reach the end of the sibling list. Each
+     'step' increments the 'before' and 'after' pointers, keeping our bearings
+     on where we should eventually go. The loop also updates vis-lists et al
+     as necessary */
+       
+    for (int index = 0; index < z && before && !before->flag(sys_z_fixed); index++)
+    {     
+      after = before; 
+      before = before->next; // Shift along our 'frame of reference'  
+      
+      // If we have just passed a window and they might be effected...
+      if (after && after->visible() && visible() && window_intersect(after, this))
+      {
+        after->update_family_vislist(); // Update their vis-list
+          
+      /* BUT, because we aren't yet in the tree, their vis-list will not
+         be occluded by our area. So we have to step through all vis-lists
+         in their family and manually occlude ourselves */ 
+        
+        base_window* stop = before ? before : under->next_or_uncle();
+        for (base_window* loop = after; loop != stop; loop = loop->superior())
+          occlude(loop->vis_list, this_win);
+          
+      /* After we've done that, we check whether they are a subliminal window.
+         If they are, then we have just removed ourselves from their point of
+         view, and thus their sub-buffer needs to be updated. */        
+         
+        if (window_sub* qualified = dynamic_cast<window_sub*>(after))
+        {
+          qualified->update_sub();
+          qualified->display();      
+        } 
+      }
+    }
+  
+  } else // Otherwise, if we're going backwards
+  {
+    // Loop backwards, for z windows, or until we reach the beginning
+    for (int index = 0; index > z && after && !after->flag(sys_z_fixed); index--)
+    {
+      // Simply recalculate the passed-window's vis-list, if need be
+      if (visible() && after->visible() && window_intersect(after, this)) 
+        after->update_family_vislist();                   
+          
+      before = before ? before->prev : after;
+      after = after->prev;
+    }
+  }                                                      
+       
+  // Here, we insert this window at the frame-of-reference calculated above     
+  parent = under;     
+  if (before) { before->prev = this; next = before; }
+  if (after) { after->next = this; prev = after; } else parent->child = this;
+      
+  // Next, we set all the more complicated tree-pointers  
+  if (window_manager* qualified = dynamic_cast<window_manager*>(parent)) set_manager(qualified);
+  else set_manager(parent->manager);
+
+  set_master(parent->flag(grx_master) ? (dynamic_cast<window_master*>(parent)) : parent->master);
+
+  set_next_sub(find_next_sub());
+
+  // If we are a subliminal window, our sub-buffer obviously needs updating
+  if (window_sub* qualified = dynamic_cast<window_sub*>(this)) 
+  {
+    qualified->update_sub();
+    set_next_sub_behind(qualified);
+  } 
+
+  update_coords(); // Not really necessarry
+  update_family_vislist(); 
+   
+  // These are the 'clean-up' operations, only necessarry if we're visible
+  if (visible()) 
+  {
+    if (z > 0)
+    {
+      parent->pack();
+      
+      display_all();
+      
+    } else
+    {
+      for (base_window* loop = next; loop; loop = loop->next) 
+      {
+        if (loop->flag(grx_subliminal)) loop->set_flag(grx_sensitive, false);
+        if (loop == last) break;
+      }
+      
+      parent->pack();      
+      inform_sub_family(this_win);    
+      if (flag(grx_subliminal)) display();
+      
+      if (last)
+      {
+        set_flag_cascade(grx_sensitive, false);
+        last->draw_arb_zones(this_win, DAZ_R_CHILDREN+DAZ_R_PREVIOUS+DAZ_F_SPYSUB);
+        set_flag_cascade(grx_sensitive, true);
+      }        
+      
+      for (base_window* loop = next; loop; loop = loop->next) 
+      {
+        if (loop->flag(grx_subliminal)) 
+        {
+          loop->set_flag(grx_sensitive, true);
+          loop->display(); 
+        }
+        if (loop == last) break;
+      }
+    }
+    
+    delete this_win;
+    
+  } else parent->pack();
+} 
+
+
+void window_manager::buffer_updated(const zone* list)
+{
+  if (allegro_mouse)
+    for (const zone* loop = list; loop; loop = loop->next) unscare_mouse();
+
+  if (is_video())
+  {
+    release_bitmap(get_buffer());
+  }
+
+  window_master::buffer_updated(list);
+}
+
+[CHANGE LOG:]
+
+<15/10/2002>
+- Fully implemented fragment delegation system, results succesfull. 
+- Recoded 'draw_arb_zone' function, and renamed it to 'project' which 
+  takes a pointer of the window to recurse back from rather than awkward 
+  flags.
+- Created 'render(ax,ay,bx,by)' function to re-render only a small part
+  of a window, using 'project'.
+
+<14/10/2002>
+- Remove pIcon and scroll_bar objects from pScroll, replaced with built-in
+  buttons and thumb. Revamped all code.
+- Improve pPane code, removed necessity for 'pRect' corner-block by making
+  use of the estate to exclude the content window from the corner.
+- Renamed 'vis_ignore_estate' to 'vis_orphan'.
+- Began plans to implement the fragment-delegation system.
+- Removed 'event_mouse_hold' callback and replaced it with 'event_mouse_poll'
+  which is called every frame when the mouse is involved with a window and
+  its 'evt_poll' flag is set, and is passed the frame-number since polling
+  began.
+
+<12/10/2002>
+- Renamed:
+  'event_participant' -> 'pObserver'
+  'knot_send_list'    -> 'outgoing_list'
+  'knot_receive_list' -> 'incoming_list'
+- Cleaned up event-notification system, removed inline definitions where
+  necessary. Removed old comments that were out-of-date. Greatly improved
+  some code into one-liners, made code more legible.
+- Created 'pCheck' class that implements radio-button behaviour by taking
+  a pointer to an optional 'pCheckGroup' class - which only points to the
+  last-selected radiobutton, and thus isn't very big.
+- Created 'pBitmap' class that is a reference counted wrapper for an
+  Allegro bitmap. By default it shares ownership when copied, but an
+  assignment statement should copy the bitmap instead of sharing the
+  representation.
+- Began work on 'pRange' object to objectify the minimum, maximum and value
+  of a progression of data. Perhaps should make this double-floating point,
+  and skip the min and max? Just have 'gap'?
+- Seperated 'master' functionality into a virtual base-class called 
+  'base_master' to allow for any widget to be buffered.
+- Completely split all widgets off into their own files, possibly decreasing
+  execution time. 
+
+<8/10/2002>
+- Renamed:
+  'listen(...)' -> 'connect(...)'
+  'event_knot'  -> 'pConnection'
+  'event_info'  -> 'pEvent'
+  ...and event-info objects now use hungarian notation with 'e' prefix.
+- Added ability to 'suspend' pConnections making use of a pointer to one of them
+  that is returned by the 'connect' function. pConnections are automatically 
+  disconnected for the period that they are called, preventing self-trigger.
+- Experimented with namespaces, but found they prevented forward-declaration in
+  external files.
+- Created 'pProxy' class that attaches to one or more pConnections, and can be
+  used to implement custom callback behaviour (such as binding) - makes use of 
+  factory method to eliminate redundancy in specifing the template and allow
+  overloading.
+- Developed 'pInterceptProxy' template to update an internal variable with a
+  member from a seperate event whenever it is transmitted, or update an arbitrary
+  reference to the type using the event's member.
+- Developed 'pAutoProxy' template that allows default arguments to be generated
+  for a given callback.
+
+<4/10/2002>
+- Altered display-delegation policy, sub-updating is now delegated as well. More
+  efficient transparency code, no need for 'sys_delegated'.
+- Renamed all widgets to use hungarian notation, kept old notation for functions.
+  Used typdefs to allow for old spelling, eg pWindow = p_window.
+- Beginning split-off of widgets into different files.
+
+<1/10/2002>
+- "Render()" for when a window's content changes, "display()" for when
+  it needs to be drawn. 
+- Incorporated transparency code into base-window itself, added 4 bytes
+  but simplified things enormously. 
+- Added 'transparent_window' template that automatically constructs a trans-
+  parent window out of an existing window class.
+- Renamed 'kb_event' to 'key_event'
+- Updated to MingW 2.0 - uses GCC 3.2 and Allegro 4.11! Now, uses namespace
+  correctly "std::string", "std::ostream", "std::list", etc.
+- Changed 'shortcut' widget-component to 'pk_keys' so that ALT-combinations work.
+- Cleaned up pbasewin.h header, sectioning code.
+
+<26/09/2002>
+- Fixed virtual base-classing problem using extra 'base pointer' variable in
+  event_knot that contains the actual starting address (the 'this' variable)
+  for the listening function. 
+- Revamped listener system, no more macros, instead, template functions are 
+  used that can automatically deduce the type to listen for with normal 
+  part-methods, but needs to be supplied the right type for void part-methods.
+  Normal callbacks: "listen(canvas, &my_class::canvas_drag);"
+  Void callbacks:   "listen<activate_ei>(exit_button, &my_class::exit_clicked);"
+- Attempted to implement "binding" between data members of an ei that is issued
+  regularly, such as "int_change_value" or the equivalent, and a member of a
+  listening class. This would automaticallly keep the listen class's variable 
+  up-to-date with a member from any given ei. However, this idea has been foiled
+  by GCC which prevents template-address-taking from within another template func.
+- Removed 'window_sub' class and replaced with interface 'base_subliminal'. This
+  allows any given window to implement transparency through a subliminal buffer.
+
+<16/09/2002>
+- Attempted to use virtual base-classing to allow for easy hybrids.. In fact,
+  this causes shit in a manner I cannot possibly overcome. The base-address of
+  the callbacks is wrong, and cannot *always* be corrected because there might
+  be several registered callbacks listening from different parts of a virtual-
+  base class heirarchy. These all need the correct starting address, something 
+  that cannot be guarenteed if they are registered from the same most-derived 
+  class constructor, without a hell of a lot of client intervention.
+
+<14/09/2002>
+- Removed heirarchical event matching, now just tests for type equivalence.
+- Revamped listener macros. Now, there are two macros "create_listener", and
+  "create_void_listener". Similarly, there is "remove_listener" and "remove_
+  void_listener". 
+- Added "create_base_listener" macro which takes the event_info base class.
+- Removes some const-correctness, which just screwed things up anyway.
+- Removed loading mechanism. Now, windows are guarenteed a valid display mode
+  on initialization (should check this in base-window constructor). 'Load' is
+  just used to set things prior to display. Now, if a window is dependant on 
+  some other window being loaded before it can perform a task, it can link a
+  listener to listen for a 'load' event from that dependant window.
+- Changed the "suchandsuch_hook" format to "on_suchandsuch" format. Added 
+  "on_show" and "on_hide", "on_change_mode", "on_add" and "on_remove".
+- Fiddled with window_pane's code to get it working under new loading scheme.
+
+<since before>
+- Added VOID_LISTENER macro for event notification (long ago).
+- Added pack-propogation upwards through containers
+- Added re-entrancy to pack, transmit and some manager code.
+- Added display contexts instead of 'draw_zone'. These use relative rendering 
+  to make graphical output easier for different target bitmaps.
+- Renamed all files to 'pxyz.h' and 'pxyz.cpp' to clean things up.
+- Added better keyboard event class (kb_event), defined in 'puser.h'
+- Refined event notification mechanism.
+- Added "gobbler" pack-scheme and "compass" pack scheme.
+- Nailed down 'preferred' width/height scheme for widgets, and added 'normal'
+  width/height virtual functions.
+- Added estate, for gods sake.
+- Added various text-manipulation functions for graphical context.
+- Fixed 1-pixel shunting bug with clipping routine.
+- Removed event-handling, now implemented directly in window (good idea).
+- Removed initializers, and loading specifications.
+- Simplified display delegation scheme
+- Added nice flag support using bitsets.
+- Added event notification (this is an understatement. I've probably written and
+  rewritten these thing 4 times). 
+
+--- LOTS OF OTHER THINGS I CAN'T REMEMBER (its been 4 months) ---
+
+<01/5/02> - My Birthday :-)
+- New flag 'dynamic event_handler' that can be turned off to allow a window to use multiple
+  inheritance with an event_handler
+- Add empty () constructors!
+- Make an option to guarentee the first drawing operation after a poll() is vsync()'d.
+- New debugging option that displays the number of times each window has been displayed!
+- Set up callbacks for any keypresses that "fall off" all the windows.
+- Have flag identifiers as part of an enum!- Added full event-handling system. Handles key repeating, mouse clicking, various
+  types of window-based event (losefocus, getfocus, etc), and uses a simple call to
+  "poll" every now and then to handle it all. Even has full cursor library!
+- Added two new speedy masked_image types: locked_masked_image and locked_rle_mouse_image.
+  These blit the masked image directly to the trans_buffer whenever the trans_buffer is
+  updated, allowing for a simple blit from the trans_buffer to the screen for a display.
+  About 100 times faster.
+- Added console "time" commands that allow for timing of displays, moves, etc.
+- Started using proper objects in xdemo.cpp instead of a table of pointers.
+- Implemented "edit span" system that allows for editing the contents of rich windows
+  such as images and text-boxes, where re-blitting and re-rendering will occur auto-
+  matically as necessary.
+- Implemented proto-type text-box to handle text input. Works pretty well, but needs
+  substantial changes. Need to formulate plan for text-selection, etc.
+- Fixed bug relating to setting the clipping rectangle to (0,0,0,0) which Allegro thinks
+  means we want to turn clipping OFF. Probably was causing all those GPRs. Yippeee :-).
+- Found more elegant display delegation solution - uses the delegator's destructor.
+- Added display-intent options: full, object, or linear. These aid in redisplaying
+  transparent objects (probably not worth it though, should take them out again).
+- Added system for allowing a parent to clip the co-ordinates of its children.
+- Added new window type - window_main. Has a text-bar at the top.
+- Extended rich-text service-related functions.
+- Most text-bearing windows now make use of string class.
+- DAZ now uses named flags.
+- Added new debugging flags that display the z_level, win_id, etc in the corners of
+  windows.
+
+<26/4/02>
+- Added pond window. Locked to 160x100 size, but very pretty :-).
+- Formulated plan for event handling.
+
+<....>
+- Improved efficiency many-fold by adding display delegation system
+- Greatly cleaned up DAZ algorithymn.
+- Added console system to aid in debugging and benchmarking.
+- Implemented handling of out-of-bounds windows
+- Implemented proper initialization system.
+- Perfected trains-chain "reforging" on insert, extract, z_raise, etc.
+- Clamped down on wasteful code, cleaned up many unnecessary recursions, etc.
+- Merged window_image and window_buf code.
+- Started work on window_canvas system: Object orientated rendering of primitives.
+- Improved efficiency of trans_window spying system.
+- Optimized 'wavy blit' effect.
+
+<12/4/02>
+- Added subscript access function. Calling x[2] will return the 3rd child of x, etc.
+- Improved transparency code, added flag-handling to display different effects..
+- Added get_next_external_trans() function, returns first trans_window in chain that
+  isn't a descendant of us.
+
+<02/4/02>
+- Replaced _update_next_trans() function to use trans_spying code from draw_arb_zones().
+- Created new header file "z.hpp" to include common macros and allegro-safe inline wrappers.
+- Improved z-shuffling code - efficiency increase.
+- Massively improved the occluding component of draw_arb_zones(). Solution was a one-liner,
+  previous code was probably 40 lines :-).
+- Avoided possible stray-pointer problem in draw_arb_zone() code.
+
+<30/3/02>
+- Made sure that the transparency draw code could handle (0,0,0,0) zone.
+- Added and updated comments in zone.cpp/zone.hpp
+- Stopped _update_next_trans() from calling itself when the trans_zone misses.
+- Fixed several bugs involving the possible NULL-result of intersect() being ignored.
+- Improved efficiency in occluding code by using shift_zone() instead of push_zone()
+  so that newly created fragments are not re-checked by algorithmyn for collision!
+- Added "intersect(coord_int x, coord_int y)" function for zone.
+- Added "shift_zone(zone*)" function for zone.
+- Removed "bool relative" argument from "zone::zone(base_window*)" function.
+- Fixed window_trans display code - clipping rectangle now set on destination bitmap
+- Definined new ZMAX, ZMIN, and ZMID macros to prevent conflict with Allegro's.
+
+[DONE]
+
+Create 'content pane' that can hold an arbitrary number of child windows. It
+looks at the maximum co-ordinates used by the children, and scrolls as necessary.
+You can use icons in it with 'flow_layout', you can put check-boxes in it in
+a stack, you can put a tree in it, etc. textbox - dynamically resizes to fit
+longest line, etc? It will event check out widgets being selected and automatically
+scroll to them.
+
+Geometry propogation ala Perl's pack. Set requested size of container to its
+minimum width/height.
+
+Event-info mouse classes should contain more information: click point, for 
+dragging and mouse up, also the current mouse point.
+
+Add 'chomper' layout manager. Each window takes a 'chomp' out of the north, east,
+south, or west sides. They are given a 0..1 fraction of the remaining space in the
+perpendicular direction.
+
+[AUTOCAST]
+
+template <class Pointed>
+class auto_cast2
+{ 
+  private:
+                     
+    Pointed p;
+  
+  public:
+  
+    auto_cast2(Pointed pp) : p(pp) { }
+  
+    template<class Other>
+    operator Other()
+    {
+      return dynamic_cast<Other>(p);
+    }
+    
+    Pointed operator*()
+    { 
+      return p;
+    }
+
+    Pointed operator->()
+    { 
+      return p;
+    }
+};  
+
+template <class In>
+auto_cast2<In> auto_cast(In i)
+{
+  return auto_cast2<In>(i);
+}
+
+[FIXED]
+
+Error with a new clipping rectangle being 'shifted' when applied, because it
+was completely external to the existing clipping rectangle. Symptoms: text-box
+was displaying too much text.
+
+Random crashing due to window_manager still having references to windows that
+were now deleted, etc.
+
+Mouse cursor being left in an incorrect state due to a z-change. The z-change 
+utilises 'extract', which (as of recently) purged all records of the window
+extracted from the window-manager (see above) - which would prevent the 
+window from receiving any 'mouse_up' commands after the drag. This purging 
+has now been moved to 'remove', and 'extract' no longer calls it.
+
+template<class R, class T, class A>
+struct pTemplateMethod1 : public pMethod
+{
+  R (T::*pointer)(A);
+  pAtom* call(pAtom* self, AtomList& a)
+  {
+    A a;
+    T* real_self;
+    getAtom(self, real_self);
+    getAtom(a[0], a); 
+    return makeAtom((real_self->*pointer)(a));
+  }
+};
+
+template<class R, class T, class A, class B>
+struct pTemplateMethod2 : public pMethod
+{
+  R (T::*pointer)(A,B);
+  pAtom* call(pAtom* self, AtomList& a)
+  {
+    A a;
+    B b;
+    T* real_self;
+    getAtom(self, real_self);
+    getAtom(a[0], a); 
+    getAtom(a[1], b);
+    return makeAtom((real_self->*pointer)(a, b));
+  }
+};
+
+template<class R, class T, class A, class B, class C>
+struct pTemplateMethod3 : public pMethod
+{
+  R (T::*pointer)(A,B,C);
+  pAtom* call(pAtom* self, AtomList& a)
+  {
+    A a;
+    B b;
+    C c;
+    T* real_self;
+    getAtom(self, real_self);
+    getAtom(a[0], a); 
+    getAtom(a[1], b);
+    getAtom(a[2], c);
+    return makeAtom((real_self->*pointer)(a, b, c));
+  }
+};
+
+
