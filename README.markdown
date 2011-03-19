@@ -20,11 +20,16 @@ For some screenshots, see the [wiki](https://github.com/taliesinb/penguin/wiki).
 
 Here was the original README, though I never got round to putting it on SourceForge, as was my plan:
 
-    What is Penguin?    
-    Penguin is a simple GUI library, with its own display routines, callback system,    and widget classes. It is meant to function as a "lightweight" GUI system for    any platforms supporting the Allegro graphics library - these include Windows,    DOS, Linux, MacOS and BeOS. It supports basic 'cool stuff' like transparency    and masked images, and sports a reasonable set of widgets that should suffice    for common usage.    
-    What Penguin is not:    
-    It is not thread-safe, and all callback functions execute from within the GUI    management code. It does not have an extensive widget set, just enough to get    going with. It does not feature multi-platform graphics (pluggable look 'n feel).    It is obviously not competing with the vast arena of proffesional-level projects    that are in one way or another associated with Graphical User Interfaces - the    primary function of Penguin was to provide the author with a learning experience,    and to gain some technical knowledge in C++ (which it did). I decided to release    it in case it turned out to be useful to anyone who was interested in a    non-native GUI for use in an Allegro environment.     
-    On the Penguin wish-list:    - Dockable widgets to use with a toolbar.    - Further set of 'bind' template functions as in GTK's GCode.
+    What is Penguin?
+    
+    Penguin is a simple GUI library, with its own display routines, callback system, and widget classes. It is meant to function as a "lightweight" GUI system for any platforms supporting the Allegro graphics library -these include Windows, DOS, Linux, MacOS and BeOS. It supports basic 'cool stuff' like transparency and masked images, and sports a reasonable set of widgets that should suffice for common usage.
+    
+    What Penguin is not:
+    
+    It is not thread-safe, and all callback functions execute from within the GUI management code. It does not have an extensive widget set, just enough to get going with. It does not feature multi-platform graphics (pluggable look 'n feel). It is obviously not competing with the vast arena of proffesional-level projects that are in one way or another associated with Graphical User Interfaces - the primary function of Penguin was to provide the author with a learning experience, and to gain some technical knowledge in C++ (which it did). I decided to release it in case it turned out to be useful to anyone who was interested in a non-native GUI for use in an Allegro environment.     
+    On the Penguin wish-list:
+    - Dockable widgets to use with a toolbar.
+    - Further set of 'bind' template functions as in GTK's GCode.
 
 
 
