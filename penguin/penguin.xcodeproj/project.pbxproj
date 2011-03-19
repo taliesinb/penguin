@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B361C9513353B58009AEC66 /* jpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C7913353B58009AEC66 /* jpeg.c */; };
+		3B361C9613353B58009AEC66 /* pbasewin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C7B13353B58009AEC66 /* pbasewin.cpp */; };
+		3B361C9713353B58009AEC66 /* pconsole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C7D13353B58009AEC66 /* pconsole.cpp */; };
+		3B361C9813353B58009AEC66 /* pdemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8013353B58009AEC66 /* pdemo.cpp */; };
+		3B361C9913353B58009AEC66 /* pevent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8213353B58009AEC66 /* pevent.cpp */; };
+		3B361C9A13353B58009AEC66 /* pgrx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8413353B58009AEC66 /* pgrx.cpp */; };
+		3B361C9B13353B58009AEC66 /* playout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8613353B58009AEC66 /* playout.cpp */; };
+		3B361C9C13353B58009AEC66 /* pmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8813353B58009AEC66 /* pmanager.cpp */; };
+		3B361C9D13353B58009AEC66 /* pmaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8A13353B58009AEC66 /* pmaster.cpp */; };
+		3B361C9E13353B58009AEC66 /* psublim.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8C13353B58009AEC66 /* psublim.cpp */; };
+		3B361C9F13353B58009AEC66 /* putil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C8F13353B58009AEC66 /* putil.cpp */; };
+		3B361CA013353B58009AEC66 /* pwidgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C9113353B58009AEC66 /* pwidgets.cpp */; };
+		3B361CA113353B58009AEC66 /* pzone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361C9313353B58009AEC66 /* pzone.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B361C6E13353AFA009AEC66 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3B361C4F13353AC1009AEC66 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3B361C7013353AFA009AEC66 /* Penguin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Penguin; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B361C7913353B58009AEC66 /* jpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = jpeg.c; path = ../../src/jpeg.c; sourceTree = "<group>"; };
+		3B361C7A13353B58009AEC66 /* jpgalleg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jpgalleg.h; path = ../../src/jpgalleg.h; sourceTree = "<group>"; };
+		3B361C7B13353B58009AEC66 /* pbasewin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pbasewin.cpp; path = ../../src/pbasewin.cpp; sourceTree = "<group>"; };
+		3B361C7C13353B58009AEC66 /* pbasewin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pbasewin.h; path = ../../src/pbasewin.h; sourceTree = "<group>"; };
+		3B361C7D13353B58009AEC66 /* pconsole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pconsole.cpp; path = ../../src/pconsole.cpp; sourceTree = "<group>"; };
+		3B361C7E13353B58009AEC66 /* pconsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pconsole.h; path = ../../src/pconsole.h; sourceTree = "<group>"; };
+		3B361C7F13353B58009AEC66 /* pdefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pdefs.h; path = ../../src/pdefs.h; sourceTree = "<group>"; };
+		3B361C8013353B58009AEC66 /* pdemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pdemo.cpp; path = ../../src/pdemo.cpp; sourceTree = "<group>"; };
+		3B361C8113353B58009AEC66 /* penguin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = penguin.h; path = ../../src/penguin.h; sourceTree = "<group>"; };
+		3B361C8213353B58009AEC66 /* pevent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pevent.cpp; path = ../../src/pevent.cpp; sourceTree = "<group>"; };
+		3B361C8313353B58009AEC66 /* pevent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pevent.h; path = ../../src/pevent.h; sourceTree = "<group>"; };
+		3B361C8413353B58009AEC66 /* pgrx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pgrx.cpp; path = ../../src/pgrx.cpp; sourceTree = "<group>"; };
+		3B361C8513353B58009AEC66 /* pgrx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgrx.h; path = ../../src/pgrx.h; sourceTree = "<group>"; };
+		3B361C8613353B58009AEC66 /* playout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = playout.cpp; path = ../../src/playout.cpp; sourceTree = "<group>"; };
+		3B361C8713353B58009AEC66 /* playout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playout.h; path = ../../src/playout.h; sourceTree = "<group>"; };
+		3B361C8813353B58009AEC66 /* pmanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pmanager.cpp; path = ../../src/pmanager.cpp; sourceTree = "<group>"; };
+		3B361C8913353B58009AEC66 /* pmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pmanager.h; path = ../../src/pmanager.h; sourceTree = "<group>"; };
+		3B361C8A13353B58009AEC66 /* pmaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pmaster.cpp; path = ../../src/pmaster.cpp; sourceTree = "<group>"; };
+		3B361C8B13353B58009AEC66 /* pmaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pmaster.h; path = ../../src/pmaster.h; sourceTree = "<group>"; };
+		3B361C8C13353B58009AEC66 /* psublim.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = psublim.cpp; path = ../../src/psublim.cpp; sourceTree = "<group>"; };
+		3B361C8D13353B58009AEC66 /* psublim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = psublim.h; path = ../../src/psublim.h; sourceTree = "<group>"; };
+		3B361C8E13353B58009AEC66 /* puser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = puser.h; path = ../../src/puser.h; sourceTree = "<group>"; };
+		3B361C8F13353B58009AEC66 /* putil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = putil.cpp; path = ../../src/putil.cpp; sourceTree = "<group>"; };
+		3B361C9013353B58009AEC66 /* putil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = putil.h; path = ../../src/putil.h; sourceTree = "<group>"; };
+		3B361C9113353B58009AEC66 /* pwidgets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pwidgets.cpp; path = ../../src/pwidgets.cpp; sourceTree = "<group>"; };
+		3B361C9213353B58009AEC66 /* pwidgets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pwidgets.h; path = ../../src/pwidgets.h; sourceTree = "<group>"; };
+		3B361C9313353B58009AEC66 /* pzone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pzone.cpp; path = ../../src/pzone.cpp; sourceTree = "<group>"; };
+		3B361C9413353B58009AEC66 /* pzone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pzone.h; path = ../../src/pzone.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B361C6D13353AFA009AEC66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34768D6C127929AC0084E5C4 = {
+			isa = PBXGroup;
+			children = (
+				3B361C7213353AFA009AEC66 /* Penguin */,
+				3B361C4C13353AC1009AEC66 /* Frameworks */,
+				3B361C4A13353AC1009AEC66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B361C4A13353AC1009AEC66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B361C7013353AFA009AEC66 /* Penguin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B361C4C13353AC1009AEC66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B361C4F13353AC1009AEC66 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3B361C7213353AFA009AEC66 /* Penguin */ = {
+			isa = PBXGroup;
+			children = (
+				3B361C7913353B58009AEC66 /* jpeg.c */,
+				3B361C7A13353B58009AEC66 /* jpgalleg.h */,
+				3B361C7B13353B58009AEC66 /* pbasewin.cpp */,
+				3B361C7C13353B58009AEC66 /* pbasewin.h */,
+				3B361C7D13353B58009AEC66 /* pconsole.cpp */,
+				3B361C7E13353B58009AEC66 /* pconsole.h */,
+				3B361C7F13353B58009AEC66 /* pdefs.h */,
+				3B361C8013353B58009AEC66 /* pdemo.cpp */,
+				3B361C8113353B58009AEC66 /* penguin.h */,
+				3B361C8213353B58009AEC66 /* pevent.cpp */,
+				3B361C8313353B58009AEC66 /* pevent.h */,
+				3B361C8413353B58009AEC66 /* pgrx.cpp */,
+				3B361C8513353B58009AEC66 /* pgrx.h */,
+				3B361C8613353B58009AEC66 /* playout.cpp */,
+				3B361C8713353B58009AEC66 /* playout.h */,
+				3B361C8813353B58009AEC66 /* pmanager.cpp */,
+				3B361C8913353B58009AEC66 /* pmanager.h */,
+				3B361C8A13353B58009AEC66 /* pmaster.cpp */,
+				3B361C8B13353B58009AEC66 /* pmaster.h */,
+				3B361C8C13353B58009AEC66 /* psublim.cpp */,
+				3B361C8D13353B58009AEC66 /* psublim.h */,
+				3B361C8E13353B58009AEC66 /* puser.h */,
+				3B361C8F13353B58009AEC66 /* putil.cpp */,
+				3B361C9013353B58009AEC66 /* putil.h */,
+				3B361C9113353B58009AEC66 /* pwidgets.cpp */,
+				3B361C9213353B58009AEC66 /* pwidgets.h */,
+				3B361C9313353B58009AEC66 /* pzone.cpp */,
+				3B361C9413353B58009AEC66 /* pzone.h */,
+			);
+			path = Penguin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B361C6F13353AFA009AEC66 /* Penguin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B361C7613353AFA009AEC66 /* Build configuration list for PBXNativeTarget "Penguin" */;
+			buildPhases = (
+				3B361C6C13353AFA009AEC66 /* Sources */,
+				3B361C6D13353AFA009AEC66 /* Frameworks */,
+				3B361C6E13353AFA009AEC66 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Penguin;
+			productName = Penguin;
+			productReference = 3B361C7013353AFA009AEC66 /* Penguin */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34768D6E127929AC0084E5C4 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 34768D71127929AC0084E5C4 /* Build configuration list for PBXProject "penguin" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 34768D6C127929AC0084E5C4;
+			productRefGroup = 3B361C4A13353AC1009AEC66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B361C6F13353AFA009AEC66 /* Penguin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B361C6C13353AFA009AEC66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B361C9513353B58009AEC66 /* jpeg.c in Sources */,
+				3B361C9613353B58009AEC66 /* pbasewin.cpp in Sources */,
+				3B361C9713353B58009AEC66 /* pconsole.cpp in Sources */,
+				3B361C9813353B58009AEC66 /* pdemo.cpp in Sources */,
+				3B361C9913353B58009AEC66 /* pevent.cpp in Sources */,
+				3B361C9A13353B58009AEC66 /* pgrx.cpp in Sources */,
+				3B361C9B13353B58009AEC66 /* playout.cpp in Sources */,
+				3B361C9C13353B58009AEC66 /* pmanager.cpp in Sources */,
+				3B361C9D13353B58009AEC66 /* pmaster.cpp in Sources */,
+				3B361C9E13353B58009AEC66 /* psublim.cpp in Sources */,
+				3B361C9F13353B58009AEC66 /* putil.cpp in Sources */,
+				3B361CA013353B58009AEC66 /* pwidgets.cpp in Sources */,
+				3B361CA113353B58009AEC66 /* pzone.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		34768D6F127929AC0084E5C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
+				"OTHER_LDFLAGS[arch=*]" = "";
+			};
+			name = Debug;
+		};
+		34768D70127929AC0084E5C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		3B361C7713353AFA009AEC66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /opt/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-framework",
+					Cocoa,
+					"-lalleg-main",
+					"-lalleg",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3B361C7813353AFA009AEC66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34768D71127929AC0084E5C4 /* Build configuration list for PBXProject "penguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34768D6F127929AC0084E5C4 /* Debug */,
+				34768D70127929AC0084E5C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B361C7613353AFA009AEC66 /* Build configuration list for PBXNativeTarget "Penguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B361C7713353AFA009AEC66 /* Debug */,
+				3B361C7813353AFA009AEC66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34768D6E127929AC0084E5C4 /* Project object */;
+}
