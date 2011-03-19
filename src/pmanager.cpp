@@ -483,8 +483,9 @@ void window_manager::press_key(int key, int scan, int shift, int other)
   }
 }
 
-void wm_keyboard_callback(int scan, int key)
+void wm_keyboard_callback(int scan)
 {
+  int key = scancode_to_ascii(scan);
   if (scan & 0x80) // If this key has been released
   {
     scan ^= 0x80;
@@ -554,7 +555,7 @@ void load_key_handler()
   set_keyboard_rate(0,0);
 
   /* hacking allegro */
-  // keyboard_lowlevel_callback = wm_keyboard_callback;
+  keyboard_lowlevel_callback = wm_keyboard_callback;
 }
 
 void unload_key_handler()
